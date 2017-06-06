@@ -1,0 +1,75 @@
+//
+//  MovieListTableViewController.swift
+//  Mock-Cinema
+//
+//  Created by MrDummy on 6/6/17.
+//  Copyright © 2017 Huy. All rights reserved.
+//
+
+import UIKit
+import Firebase
+
+class MovieListTableViewController: UITableViewController {
+    @IBOutlet weak var btnLogout: UIButton!
+    @IBOutlet weak var btnHello: UIButton!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        //user is not login
+        if Auth.auth().currentUser?.uid == nil {
+            btnHello.isHidden = true
+            btnHello.isEnabled = false
+            btnLogout.setTitle("Login", for: .normal)
+        }
+        
+        
+    }
+    @IBAction func btnHello(_ sender: Any) {
+        let srcUserInfo = self.storyboard?.instantiateViewController(withIdentifier: "userProfile") as! UserProfileViewController
+        self.present(srcUserInfo, animated: true)
+
+    }
+
+    @IBAction func btnLogout(_ sender: Any) {
+        //user is not login
+        do {
+            try Auth.auth().signOut()
+        } catch let logoutError {
+            print(logoutError)
+        }
+        
+        let srcLogin = self.storyboard?.instantiateViewController(withIdentifier: "login") as! LoginViewController
+        self.present(srcLogin, animated: true)
+        //if Auth.auth().currentUser?.uid == nil {
+            //perform(#selector(handleLogout), with: nil, afterDelay: 0)
+        //}
+    }
+    
+    func handleLogout() {
+        do {
+            try Auth.auth().signOut()
+        } catch let logoutError {
+            print(logoutError)
+        }
+        
+        self.performSegue(withIdentifier: "goLogin", sender: self)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 0
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 0
+    }
+}

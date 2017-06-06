@@ -11,8 +11,9 @@
 		3888F5D71EE2AB7D006BE831 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3888F5D61EE2AB7D006BE831 /* LoginViewController.swift */; };
 		3888F5D91EE2B075006BE831 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3888F5D81EE2B075006BE831 /* RegisterViewController.swift */; };
 		F5F59FCB3EDC43CC284FE9C9 /* Pods_Mock_Cinema.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C2957294A80FE5C0A4D3640 /* Pods_Mock_Cinema.framework */; };
+		F65018221EE6F4C60079AC88 /* MovieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65018211EE6F4C60079AC88 /* MovieListTableViewController.swift */; };
+		F65018241EE710420079AC88 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65018231EE710410079AC88 /* UserProfileViewController.swift */; };
 		F6C3CA8C1EE1912400028722 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C3CA8B1EE1912400028722 /* AppDelegate.swift */; };
-		F6C3CA8E1EE1912400028722 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C3CA8D1EE1912400028722 /* ViewController.swift */; };
 		F6C3CA911EE1912400028722 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6C3CA8F1EE1912400028722 /* Main.storyboard */; };
 		F6C3CA931EE1912400028722 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6C3CA921EE1912400028722 /* Assets.xcassets */; };
 		F6C3CA961EE1912400028722 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6C3CA941EE1912400028722 /* LaunchScreen.storyboard */; };
@@ -25,9 +26,10 @@
 		3888F5D81EE2B075006BE831 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		78B7DF684B29A7F3A795E274 /* Pods-Mock-Cinema.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mock-Cinema.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mock-Cinema/Pods-Mock-Cinema.debug.xcconfig"; sourceTree = "<group>"; };
 		89A227AEFBEB03D50F6724D1 /* Pods-Mock-Cinema.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mock-Cinema.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mock-Cinema/Pods-Mock-Cinema.release.xcconfig"; sourceTree = "<group>"; };
+		F65018211EE6F4C60079AC88 /* MovieListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListTableViewController.swift; sourceTree = "<group>"; };
+		F65018231EE710410079AC88 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		F6C3CA881EE1912400028722 /* Mock-Cinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mock-Cinema.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6C3CA8B1EE1912400028722 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F6C3CA8D1EE1912400028722 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F6C3CA901EE1912400028722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6C3CA921EE1912400028722 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6C3CA951EE1912400028722 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,6 +70,8 @@
 			children = (
 				3888F5D61EE2AB7D006BE831 /* LoginViewController.swift */,
 				3888F5D81EE2B075006BE831 /* RegisterViewController.swift */,
+				F65018211EE6F4C60079AC88 /* MovieListTableViewController.swift */,
+				F65018231EE710410079AC88 /* UserProfileViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -95,7 +99,6 @@
 			children = (
 				F615994F1EE6C85600ADE954 /* Controller */,
 				F6C3CA8B1EE1912400028722 /* AppDelegate.swift */,
-				F6C3CA8D1EE1912400028722 /* ViewController.swift */,
 				F6C3CA8F1EE1912400028722 /* Main.storyboard */,
 				F6C3CA921EE1912400028722 /* Assets.xcassets */,
 				F6C3CA941EE1912400028722 /* LaunchScreen.storyboard */,
@@ -230,9 +233,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3888F5D71EE2AB7D006BE831 /* LoginViewController.swift in Sources */,
-				F6C3CA8E1EE1912400028722 /* ViewController.swift in Sources */,
+				F65018241EE710420079AC88 /* UserProfileViewController.swift in Sources */,
 				F6C3CA8C1EE1912400028722 /* AppDelegate.swift in Sources */,
 				3888F5D91EE2B075006BE831 /* RegisterViewController.swift in Sources */,
+				F65018221EE6F4C60079AC88 /* MovieListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

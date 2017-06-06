@@ -30,8 +30,21 @@ class LoginViewController: UIViewController {
         if (txtEmail.text?.isEmpty)! || (txtPassword.text?.isEmpty)! {
             self.displayMyAlertMessage(userMessage: "Please fill out all required fields")
         } else {
-        
-            guard let email = txtEmail.text, let password = txtPassword.text else {
+            if let email = txtEmail.text, let password = txtPassword.text {
+                Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+                    if error != nil {
+                        let alert = UIAlertController(title: "Error", message: "Wrong email or password!", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: {
+                            self.txtPassword.text?.removeAll()
+                        })
+                    }
+                    else {
+                        self.performSegue(withIdentifier: "goHome", sender: self)
+                    }
+                }
+            }
+            /*guard let email = txtEmail.text, let password = txtPassword.text else {
                 print("Please fill out all required fields")
                 return
             }
@@ -41,12 +54,11 @@ class LoginViewController: UIViewController {
                     self.displayMyAlertMessage(userMessage: "Wrong email or password")
                     self.txtEmail.text?.removeAll()
                     self.txtPassword.text?.removeAll()
-                    return
                 } else {
                     // login successful
                     self.performSegue(withIdentifier: "goHome", sender: self)
                 }
-            }
+            }*/
         }
     }
     

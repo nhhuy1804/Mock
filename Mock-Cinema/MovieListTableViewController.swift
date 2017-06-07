@@ -21,6 +21,13 @@ class MovieListTableViewController: UITableViewController {
             btnHello.isHidden = true
             btnHello.isEnabled = false
             btnLogout.setTitle("Login", for: .normal)
+            
+        } else {
+            btnHello.isHidden = false
+            btnHello.isEnabled = true
+            btnLogout.setTitle("Logout", for: .normal)
+            let uidd = Auth.auth().currentUser?.uid
+            print(uidd)
         }
         
         
@@ -33,27 +40,27 @@ class MovieListTableViewController: UITableViewController {
 
     @IBAction func btnLogout(_ sender: Any) {
         //user is not login
-        do {
-            try Auth.auth().signOut()
-        } catch let logoutError {
-            print(logoutError)
+        if Auth.auth().currentUser?.uid != nil {
+            do {
+                try Auth.auth().signOut()
+            } catch let logoutError {
+                print(logoutError)
+            }
+            
+            btnHello.isHidden = true
+            btnHello.isEnabled = false
+            btnLogout.setTitle("Login", for: .normal)
+        } else {
+            //btnHello.isHidden = false
+            //btnHello.isEnabled = true
+            //btnLogout.setTitle("Logout", for: .normal)
+            
+            let srcLogin = self.storyboard?.instantiateViewController(withIdentifier: "login") as! LoginViewController
+            self.present(srcLogin, animated: true)
         }
-        
-        let srcLogin = self.storyboard?.instantiateViewController(withIdentifier: "login") as! LoginViewController
-        self.present(srcLogin, animated: true)
         //if Auth.auth().currentUser?.uid == nil {
             //perform(#selector(handleLogout), with: nil, afterDelay: 0)
         //}
-    }
-    
-    func handleLogout() {
-        do {
-            try Auth.auth().signOut()
-        } catch let logoutError {
-            print(logoutError)
-        }
-        
-        self.performSegue(withIdentifier: "goLogin", sender: self)
     }
     
     override func didReceiveMemoryWarning() {

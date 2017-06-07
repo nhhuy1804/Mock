@@ -44,22 +44,9 @@ class LoginViewController: UIViewController {
                     }
                 }
             }
-            /*guard let email = txtEmail.text, let password = txtPassword.text else {
-                print("Please fill out all required fields")
-                return
-            }
-            
-            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-                if error != nil {
-                    self.displayMyAlertMessage(userMessage: "Wrong email or password")
-                    self.txtEmail.text?.removeAll()
-                    self.txtPassword.text?.removeAll()
-                } else {
-                    // login successful
-                    self.performSegue(withIdentifier: "goHome", sender: self)
-                }
-            }*/
         }
+        let uidd = Auth.auth().currentUser?.uid
+        print(uidd)
     }
     
     func displayMyAlertMessage(userMessage: String) {
